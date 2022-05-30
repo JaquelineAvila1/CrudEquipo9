@@ -1,0 +1,30 @@
+{{> header}}
+<h2>{{viewTitle}}</h2>
+<table border="2">
+    <thead>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>CreateDate</th>
+        <th>LastUpdate</th>
+        <th></th>
+    </thead>
+    <tbody>
+        {{#each list}}
+            <tr>
+                <td>{{this.Nombre}}</td>
+                <td>{{this.apellido}}</td>
+                <td>{{this.Email}}</td>
+                <td>{{this.CreateDate}}</td>
+                <td>{{this.LastUpdate}}</td>
+                <td>
+                    <a href="/customer/{{this._id}}">Edit</a>
+                    <a href="/customer/delete/{{this._id}}"
+                    onclick="return confirm('Desea eliminar el registro?');">
+                    Eliminar
+                    </a>
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
