@@ -1,0 +1,10 @@
+{{> header}}
+<h2>{{viewTitle}}</h2>
+<form action="/customer" method="POST">
+    <input type="hidden" name="_id" value="{{customer._id}}" />
+    Nombre 
+    <input type="text" name="name" value="{{customer.name}}"><br />
+    Apellido
+    <input type="text" name="description" value="{{customer.description}}"><br />
+    <button type="submit">Save</button>
+</form>

@@ -1,0 +1,32 @@
+<div class="row justify-content-md-center">
+    <div class="col-md-4">
+        {{#if message}}
+            <div class="alert {{messageClass}}">
+                {{message}}
+            </div>
+        {{/if}}
+        <form action="/register" method="POST">
+            <div class="form-group">
+                Nombre
+                <input type="text" name="firstName" id="" class="form-control">
+            </div>
+            <div class="form-group">
+                Apellido
+                <input type="text" name="lastName" id="" class="form-control">
+            </div>
+            <div class="form-group">
+                Correo
+                <input type="text" name="email" id="" class="form-control">
+            </div>
+            <div class="form-group">
+                Contraseña
+                <input type="password" name="password" id="" class="form-control">
+            </div>
+            <div class="form-group">
+                Confirmar Contraseña
+                <input type="password" name="confirmPassword" id="" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Registrarse</button>
+        </form>
+    </div>
+</div>
