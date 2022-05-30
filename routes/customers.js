@@ -19,11 +19,15 @@ router.post('/', (req, res) => {
 //metodos para insertar y actualizar
 function insertCustomer(req, res){
     var customer = new Customer();
-    customer.nombre = req.body.nombre;
-    customer.apellido = req.body.apellido;
+    customer.customer_id = req.body.customer_id;
+    customer.store_id = req.body.store_id;
+    customer.first_name = req.body.first_name;
+    customer.last_name = req.body.last_name;
     customer.email = req.body.email;
-    customer.createDate= req.body.createDate;
-    customer.lastUpdate = req.body.lastUpdate;
+    customer.address_id = req.body.address_id;
+    customer.active = req.body.active;
+    customer.create_date = req.body.create_date;
+    customer.last_update = req.body.last_update;
     customer.save(e => {
         if(!e)
         res.redirect('customer/customerList');
@@ -37,7 +41,8 @@ function updateCustomer(req, res){
             res.render('customer/customerList', {
                 viewTitle: "Update Customer",
                 customer: req.body
-            })
+            });
+            res.redirect('customer/customerList')
         } else {
             console.log("Error", err);
         }
@@ -80,4 +85,3 @@ router.get('/delete/:id', (req, res) => {
 })
 
 module.exports = router;
-

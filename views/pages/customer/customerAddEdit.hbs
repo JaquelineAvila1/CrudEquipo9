@@ -1,0 +1,38 @@
+{{> header}}
+<h2>{{viewTitle}}</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+            <form action="/customer" method="POST">
+                <div class="mb-3">
+                    
+                </div>
+                <input type="hidden" name="_id" value="{{customer._id}}" />
+                Customer Id 
+                <input type="text" name="customer_id" value="{{customer.customer_id}}"><br />
+                Store Id 
+                <input type="text" name="store_id" value="{{customer.store_id}}"><br />
+                Nombre 
+                <input type="text" name="first_name" value="{{customer.first_name}}"><br />
+                Apellido
+                <input type="text" name="last_name" value="{{customer.last_name}}"><br />
+                Email 
+                <input type="text" name="email" value="{{customer.email}}"><br />
+                Dirección Id 
+                <input type="text" name="address_id" value="{{customer.address_id}}"><br />
+                Active 
+                <input type="text" name="active" value="{{customer.active}}"><br />
+                Create Date
+                <input type="text" name="create_date" value="{{customer.create_date}}"><br />
+                Last Update
+                <input type="text" name="last_update" value="{{customer.last_update}}"><br />
+                <button type="submit">Save</button>
+            </form>
+
+
+        </div>
+    </div>
+</div>
