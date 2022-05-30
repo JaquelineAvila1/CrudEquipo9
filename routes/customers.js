@@ -19,8 +19,11 @@ router.post('/', (req, res) => {
 //metodos para insertar y actualizar
 function insertCustomer(req, res){
     var customer = new Customer();
-    customer.name = req.body.name;
-    customer.description = req.body.description;
+    customer.nombre = req.body.nombre;
+    customer.apellido = req.body.apellido;
+    customer.email = req.body.email;
+    customer.createDate= req.body.createDate;
+    customer.lastUpdate = req.body.lastUpdate;
     customer.save(e => {
         if(!e)
         res.redirect('customer/customerList');
@@ -77,3 +80,4 @@ router.get('/delete/:id', (req, res) => {
 })
 
 module.exports = router;
+
